@@ -752,11 +752,11 @@ typedef unsigned long int ulong;
    */
   #define LSS_RETURN(type, res)                                               \
     do {                                                                      \
-      if ((unsigned long)(res) >= (unsigned long)(-4095)) {                   \
-        LSS_ERRNO = -(res);                                                   \
+      if ((unsigned long)res >= (unsigned long)(-4095)) {                     \
+        LSS_ERRNO = -res;                                                     \
         res = -1;                                                             \
       }                                                                       \
-      return (type) (res);                                                    \
+      return (type)res;                                                       \
     } while (0)
   #elif defined(__mips__)
   /* On MIPS, failing system calls return -1, and set errno in a
