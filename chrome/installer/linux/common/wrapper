@@ -45,5 +45,7 @@ exec < /dev/null
 exec > >(exec cat)
 exec 2> >(exec cat >&2)
 
+CHROME_EXTRA_ARGS=""
+
 # Note: exec -a below is a bashism.
-exec -a "$0" "$HERE/@@PROGNAME@@" "$@"
+exec -a "$0" "$HERE/@@PROGNAME@@" ${CHROME_EXTRA_ARGS} "$@"

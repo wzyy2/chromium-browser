@@ -50,6 +50,7 @@ if (use_v8_context_snapshot) {
     output_path = rebase_path(output_file, root_build_dir)
 
     args = [
+      "./v8-qemu-wrapper.sh",
       "./" + rebase_path(
               get_label_info(
                       ":v8_context_snapshot_generator($v8_snapshot_toolchain)",
